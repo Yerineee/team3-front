@@ -1,12 +1,19 @@
+import styled from "styled-components";
+
 import MainNavBar from "../components/Main/MainNavBar";
 
 const MainPage = () => {
   return (
-    <div>
+    <Div>
       <MainNavBar />
       <div>메인 페이지</div>
-    </div>
+    </Div>
   );
 };
 
 export default MainPage;
+
+const Div = styled.div`
+  width: 100%;
+  height: 100%;
+`;
