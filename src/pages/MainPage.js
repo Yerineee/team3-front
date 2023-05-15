@@ -1,9 +1,9 @@
-import Header from "../components/Footer/Header";
+import MainNavBar from "../components/Main/MainNavBar";
 
 const MainPage = () => {
   return (
     <div>
-      <Header />
+      <MainNavBar />
       <div>메인 페이지</div>
     </div>
   );
