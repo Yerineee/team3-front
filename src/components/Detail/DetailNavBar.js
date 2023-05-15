@@ -35,7 +35,6 @@ const BackBtn = styled.img`
   position: absolute;
   left: 0px;
 
-  box-sizing: border-box;
   width: 10px;
   height: 18px;
 
@@ -51,7 +50,6 @@ const RightBtns = styled.div`
 const LikeBtn = styled.img`
   position: relative;
 
-  box-sizing: border-box;
   width: 22px;
   height: 22px;
 
@@ -62,7 +60,6 @@ const LikeBtn = styled.img`
 const AdditionalBtn = styled.img`
   position: relative;
 
-  box-sizing: border-box;
   width: 3.81px;
   height: 21.91px;
 
