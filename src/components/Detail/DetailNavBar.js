@@ -33,7 +33,7 @@ const Div = styled.div`
 // 상단의 뒤로 가기 버튼
 const BackBtn = styled.img`
   position: absolute;
-  left: 0px;
+  left: 16px;
 
   width: 10px;
   height: 18px;
@@ -43,7 +43,7 @@ const BackBtn = styled.img`
 
 const RightBtns = styled.div`
   position: absolute;
-  right: 0px;
+  right: 16px;
 `;
 
 // 상단의 관심 버튼
