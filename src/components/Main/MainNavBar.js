@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import cookie from "../../assets/Main/cookie.png";
 import logo from "../../assets/Main/logo.png";
 import profile from "../../assets/Main/profile.png";
@@ -9,7 +10,9 @@ const MainNavBar = () => {
     <Div>
       <div>
         <ProfileIcon src={profile} />
-        <MainLogo src={logo} />
+        <Link to="/">
+          <MainLogo src={logo} />
+        </Link>
         <CookieIcon src={cookie} />
         <SearchIcon src={search} />
       </div>
