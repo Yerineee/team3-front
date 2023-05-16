@@ -39,7 +39,6 @@ const Section = styled.div`
   font-weight: 900;
   font-size: 20px;
   line-height: 24px;
-  /* identical to box height */
 
   text-align: center;
   letter-spacing: 0.01em;
