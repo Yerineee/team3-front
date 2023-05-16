@@ -47,7 +47,6 @@ const EventSection = () => {
 export default EventSection;
 
 const Container = styled.div`
-  display: flex;
   width: 60%;
   overflow: hidden;
 `;
