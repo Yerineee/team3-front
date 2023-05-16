@@ -8,11 +8,13 @@ import additional from "../../assets/icon/DetailPage/additional.png";
 const DetailNavBar = () => {
   return (
     <Div>
-      <BackBtn src={back} />
-      <RightBtns>
+      <BtnSection>
+        <BackBtn src={back} />
+      </BtnSection>
+      <BtnSection>
         <LikeBtn src={like} />
         <AdditionalBtn src={additional} />
-      </RightBtns>
+      </BtnSection>
     </Div>
   );
 };
@@ -24,26 +26,25 @@ const Div = styled.div`
   top: -210px;
 
   display: flex;
-  align-items: center;
-
+  justify-content: space-between;
   width: 100%;
   height: 64px;
+`;
+
+const BtnSection = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 // 상단의 뒤로 가기 버튼
 const BackBtn = styled.img`
   position: absolute;
-  left: 0px;
+  left: 16px;
 
   width: 10px;
   height: 18px;
 
   margin: 12px;
-`;
-
-const RightBtns = styled.div`
-  position: absolute;
-  right: 0px;
 `;
 
 // 상단의 관심 버튼
