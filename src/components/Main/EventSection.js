@@ -12,7 +12,12 @@ const images = [
 
 const EventSection = () => {
   return (
-    <Carousel showThumbs={false} showStatus={false}>
+    <Carousel
+      showThumbs={false}
+      showStatus={false}
+      showArrows={false}
+      showIndicators={false}
+    >
       {images.map((image, index) => (
         <ImageContainer key={index}>
           <img src={image} />
@@ -29,5 +34,7 @@ const ImageContainer = styled.div`
   height: 209px;
   left: 0px;
   top: 0px;
+
   margin: auto;
+  margin-top: 31px;
 `;
