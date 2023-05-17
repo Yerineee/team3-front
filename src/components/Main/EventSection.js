@@ -29,7 +29,7 @@ const EventSection = () => {
     >
       {events.map(event => (
         <ImageContainer key={event.eventId}>
-          <img src={event.image} />
+          <img src={event.image} alt={event.eventId} />
         </ImageContainer>
       ))}
     </Carousel>
@@ -46,5 +46,5 @@ const ImageContainer = styled.div`
 
   margin: auto;
   margin-top: 31px;
-  margin-bottom: 31px;
+  margin-bottom: 46.72px;
 `;

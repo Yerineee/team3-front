@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MainNavBar from "../components/Main/MainNavBar";
 import MainMenu from "../components/Main/MainMenu";
 import EventSection from "../components/Main/EventSection";
+import ContentSection from "../components/Main/ContentSection";
 
 const MainPage = () => {
   return (
@@ -10,6 +11,7 @@ const MainPage = () => {
       <MainNavBar />
       <MainMenu />
       <EventSection />
+      <ContentSection />
     </Div>
   );
 };
