@@ -6,7 +6,11 @@ const MainMenu = () => {
   return (
     <>
       {SectionItem.map(item => {
-        return <Section key={item}>{item}</Section>;
+        return (
+          <Section key={item}>
+            <SectionTitle>{item}</SectionTitle>
+          </Section>
+        );
       })}
     </>
   );
@@ -33,7 +37,9 @@ const Section = styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
+`;
 
+const SectionTitle = styled.p`
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 900;
