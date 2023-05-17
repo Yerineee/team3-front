@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-const images = [
-  //더미 데이터 이미지 주소 입니다.
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQau7zY2IKawY3tRCBGyBmfk9hnP0nYWrg3sQ&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXL5C8apx8S76uB6CJXbhim_7Q5mVVQZ4sPg&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIPvq_dCcCOP9IjKShWKUjvl9T1uy_3m0W16z6Y3Pfl1TE99RksShGCIv_-fd-q4wSlTg&usqp=CAU",
-];
+import { API } from "../../config";
 
 const EventSection = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(API.GET_EVENT)
+      .then(response => {
+        const eventsData = response.data.events;
+        setEvents(eventsData);
+      })
+      .catch(error => {
+        console.log("Error >>", error);
+      });
+  }, []);
+
   return (
     <Carousel
       showThumbs={false}
@@ -19,9 +27,9 @@ const EventSection = () => {
       showArrows={false}
       showIndicators={false}
     >
-      {images.map((image, index) => (
-        <ImageContainer key={index}>
-          <img src={image} />
+      {events.map(event => (
+        <ImageContainer key={event.eventId}>
+          <img src={event.image} />
         </ImageContainer>
       ))}
     </Carousel>
@@ -38,4 +46,5 @@ const ImageContainer = styled.div`
 
   margin: auto;
   margin-top: 31px;
+  margin-bottom: 31px;
 `;
