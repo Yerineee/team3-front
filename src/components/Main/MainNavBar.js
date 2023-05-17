@@ -29,7 +29,6 @@ const Div = styled.div`
   display: flex;
   align-items: center;
 
-  width: 100%;
   height: 141px;
   background-color: #00dc64;
 `;
