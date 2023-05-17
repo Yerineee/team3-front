@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
