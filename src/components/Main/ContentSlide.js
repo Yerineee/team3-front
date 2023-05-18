@@ -54,6 +54,5 @@ const Img = styled.img`
   max-height: 100%; /* 이미지의 최대 높이를 100%로 설정하여 슬라이드 내에 맞춥니다 */
   object-fit: contain; /* 이미지가 왜곡되지 않도록 contain을 설정합니다 */
 
-  background: url(_(4).jpg);
   border-radius: 5px;
 `;
