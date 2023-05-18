@@ -21,10 +21,22 @@ const ContentSection = () => {
 
   return (
     <div>
-      ContentSection
+      <TopicTitle>실시간 랭킹</TopicTitle>
       <ContentSlide contents={contents} />
     </div>
   );
 };
 
 export default ContentSection;
+
+const TopicTitle = styled.p`
+  padding: 0 114.83px 10px 6px;
+
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+`;
