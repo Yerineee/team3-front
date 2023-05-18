@@ -34,9 +34,16 @@ const MainContent = () => {
 
   return (
     <Div>
-      <TopicTitle>실시간 랭킹</TopicTitle>
-      <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-      <ContentSection topicTitle={"COMIX"} contentData={comix} />
+      <Section>
+        <TopicTitle>실시간 랭킹</TopicTitle>
+        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
+        <ContentSection topicTitle={"COMIX"} contentData={comix} />
+      </Section>
+      <Section>
+        <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
+        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
+        <ContentSection topicTitle={"COMIX"} contentData={comix} />
+      </Section>
     </Div>
   );
 };
@@ -55,4 +62,8 @@ const TopicTitle = styled.p`
   line-height: 22px;
 
   color: #000000;
+`;
+
+const Section = styled.div`
+  margin-bottom: 52px;
 `;
