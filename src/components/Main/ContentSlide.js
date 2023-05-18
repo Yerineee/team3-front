@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ContentSlide = ({ contents }) => {
+  console.log(contents);
   return (
     <>
       <Carousel
@@ -15,8 +16,8 @@ const ContentSlide = ({ contents }) => {
         centerSlidePercentage={100 / 3} // 가로 길이의 33.33%만큼 보여줌
       >
         {contents.map(content => (
-          <ImageContainer key={content.eventId}>
-            <Img src={content.image} alt={content.eventId} />
+          <ImageContainer key={content.contentId}>
+            <Img src={content.image} alt={content.contentId} />
           </ImageContainer>
         ))}
       </Carousel>
@@ -28,7 +29,7 @@ export default ContentSlide;
 
 const ImageContainer = styled.div`
   width: 357px;
-  height: 209px;
+  height: 175px;
 
   display: flex;
   justify-content: center;
