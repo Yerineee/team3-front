@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const MainMenu = () => {
+  const genre = "장르";
   const [sectionItem, setSectionItem] = useState([
     "NOVEL",
     "COMIX",
     "시리즈 에디션",
     "보관함",
   ]);
+  const subNovelItem = ["로맨스", "로판", "판타지", "현판", "무협"];
   const [selectedItem, setSelectedItem] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [isGenreVisible, setIsGenreVisible] = useState(false);
+  const handleGenreClick = () => {
+    setSelectedGenre(!selectedGenre);
+    setIsGenreVisible(prevState => !prevState);
+  };
 
   const handleItemClick = item => {
     if (selectedItem === item) {
@@ -24,20 +32,34 @@ const MainMenu = () => {
     <>
       {sectionItem.map(item => {
         const isSelected = selectedItem === item;
-
         return (
-          <div>
+          <div key={item}>
             <Section
-              key={item}
               isSelected={isSelected}
               onClick={() => handleItemClick(item)}
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
             </Section>
             {isSelected && (
-              <SubMenu>
-                <SubMenuTitle>장르</SubMenuTitle>
-              </SubMenu>
+              <>
+                <SubMenu onClick={handleGenreClick} isSelected={selectedGenre}>
+                  <SubMenuTitle
+                    // onClick={handleGenreClick}
+                    // isSelected={selectedGenre}
+                  >
+                    {genre}
+                  </SubMenuTitle>
+                </SubMenu>
+                {isGenreVisible && (
+                  <SubMenuContent>
+                    {subNovelItem.map(subItem => (
+                      <SubMenu key={subItem}>
+                        <SubMenuTitle>{subItem}</SubMenuTitle>
+                      </SubMenu>
+                    ))}
+                  </SubMenuContent>
+                )}
+              </>
             )}
           </div>
         );
@@ -55,15 +77,11 @@ const Section = styled.div`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-
   height: 32px;
-
-  background: #00dc64; /* 배경색은 원래 코드 그대로 유지 */
-
+  background: #00dc64;
   border-width: 1.5px 0px;
   border-style: solid;
   border-color: #000000;
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -75,15 +93,8 @@ const SectionTitle = styled.p`
   font-weight: 900;
   font-size: 20px;
   line-height: 24px;
-
   text-align: center;
   letter-spacing: 0.01em;
-
-  color: ${props =>
-    props.isSelected
-      ? "#000000"
-      : "#ffffff"}; /* 선택된 항목일 때 글씨색을 검정색으로 변경 */
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -95,15 +106,11 @@ const SubMenu = styled.div`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-
   height: 32px;
-
-  background: #00dc64; /* 배경색은 원래 코드 그대로 유지 */
-
+  background: #00dc64;
   border-width: 1.5px 0px;
   border-style: solid;
   border-color: #000000;
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -115,13 +122,24 @@ const SubMenuTitle = styled.p`
   font-weight: 900;
   font-size: 20px;
   line-height: 24px;
-
   text-align: center;
   letter-spacing: 0.01em;
-
-  color: #ffffff;
-
+  color: ${props => (props.isSelected ? "#000000" : "#ffffff")};
+  text: ${props => (props.isSelected ? "#000000" : "#ffffff")};
   flex: none;
   order: 0;
   flex-grow: 0;
+  cursor: pointer;
+`;
+
+const SubMenuContent = styled.div`
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 5px; */
 `;
