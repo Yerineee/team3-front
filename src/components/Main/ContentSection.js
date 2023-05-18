@@ -3,8 +3,9 @@ import axios from "axios";
 import styled from "styled-components";
 import { API } from "../../config";
 import ContentSlide from "./ContentSlide";
+import arrow from "../../assets/icon/arrow.png";
 
-const ContentSection = () => {
+const ContentSection = ({ topicTitle }) => {
   const [contents, setContents] = useState([]);
 
   useEffect(() => {
@@ -21,7 +22,10 @@ const ContentSection = () => {
 
   return (
     <div>
-      <TopicTitle>실시간 랭킹</TopicTitle>
+      <ContentContainer>
+        <TopicTitle>{topicTitle}</TopicTitle>
+        <MoreIcon src={arrow} />
+      </ContentContainer>
       <ContentSlide contents={contents} />
     </div>
   );
@@ -30,13 +34,28 @@ const ContentSection = () => {
 export default ContentSection;
 
 const TopicTitle = styled.p`
-  padding: 0 114.83px 10px 6px;
+  padding: 0 114.83px 10px 14px;
 
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
 
-  color: #000000;
+  /* 시리즈 메인 컬러 */
+
+  color: #00dc64;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding-right: 15px;
+`;
+
+const MoreIcon = styled.img`
+  width: 7.81px;
+  height: 10.01px;
 `;

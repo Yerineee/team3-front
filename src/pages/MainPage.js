@@ -4,6 +4,7 @@ import MainNavBar from "../components/Main/MainNavBar";
 import MainMenu from "../components/Main/MainMenu";
 import EventSection from "../components/Main/EventSection";
 import ContentSection from "../components/Main/ContentSection";
+import MainContent from "../components/Main/MainContent";
 
 const MainPage = () => {
   return (
@@ -11,7 +12,7 @@ const MainPage = () => {
       <MainNavBar />
       <MainMenu />
       <EventSection />
-      <ContentSection />
+      <MainContent />
     </Div>
   );
 };
