@@ -21,22 +21,31 @@ const EventSection = () => {
   }, []);
 
   return (
-    <Carousel
-      showThumbs={false}
-      showStatus={false}
-      showArrows={false}
-      showIndicators={false}
-    >
-      {events.map(event => (
-        <ImageContainer key={event.eventId}>
-          <img src={event.image} alt={event.eventId} />
-        </ImageContainer>
-      ))}
-    </Carousel>
+    <Div>
+      <Carousel
+        showThumbs={false}
+        showStatus={false}
+        showArrows={false}
+        showIndicators={false}
+        infiniteLoop
+        autoPlay // 자동 재생
+        interval={3000} // 이미지 전환 간격(ms)
+      >
+        {events.map(event => (
+          <ImageContainer key={event.eventId}>
+            <img src={event.image} alt={event.eventId} />
+          </ImageContainer>
+        ))}
+      </Carousel>
+    </Div>
   );
 };
 
 export default EventSection;
+
+const Div = styled.div`
+  margin-bottom: 46.72px;
+`;
 
 const ImageContainer = styled.div`
   width: 357px;
