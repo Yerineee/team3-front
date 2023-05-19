@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const MainMenu = () => {
   const genre = "장르";
+  const [path, setPath] = useState("/main/novels");
   const [sectionItem, setSectionItem] = useState([
     "NOVEL",
     "COMIX",
@@ -26,9 +27,13 @@ const MainMenu = () => {
     if (selectedItem === item) {
       setSelectedItem(""); // 같은 아이템을 다시 클릭하면 선택 해제
       setSectionItem(["NOVEL", "COMIX", "시리즈 에디션", "보관함"]);
+      setPath("/main/novels");
+      console.log(path);
     } else {
       setSelectedItem(item);
       setSectionItem(["NOVEL"]);
+      setPath("/main");
+      console.log(path);
     }
   };
 
@@ -38,34 +43,28 @@ const MainMenu = () => {
         const isSelected = selectedItem === item;
         return (
           <div key={item}>
-            <Section
+            <SubMenu
+              to={path}
               isSelected={isSelected}
               onClick={() => handleItemClick(item)}
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
-            </Section>
+            </SubMenu>
             {isSelected && (
               <>
-                <Link to="/main/novels">
-                  <SubMenu
-                    onClick={handleGenreClick}
-                    isSelected={selectedGenre}
-                  >
-                    <SectionTitle isSelected={selectedGenre}>
-                      {genre}
-                    </SectionTitle>
-                  </SubMenu>
-                </Link>
+                <SubMenu onClick={handleGenreClick} isSelected={selectedGenre}>
+                  <SectionTitle isSelected={selectedGenre}>
+                    {genre}
+                  </SectionTitle>
+                </SubMenu>
                 {isGenreVisible && (
-                  <Link to="/main/novels">
-                    <SubMenuContent>
-                      {subNovelItem.map(subItem => (
-                        <SubMenu key={subItem}>
-                          <SubMenuTitle>{subItem}</SubMenuTitle>
-                        </SubMenu>
-                      ))}
-                    </SubMenuContent>
-                  </Link>
+                  <SubMenuContent>
+                    {subNovelItem.map(subItem => (
+                      <SubMenu key={subItem}>
+                        <SubMenuTitle>{subItem}</SubMenuTitle>
+                      </SubMenu>
+                    ))}
+                  </SubMenuContent>
                 )}
               </>
             )}
@@ -105,11 +104,13 @@ const SectionTitle = styled.p`
   letter-spacing: 0.01em;
   color: ${props => (props.isSelected ? "#000000" : "#ffffff")};
   flex: none;
+  text-decoration: none;
+  border-bottom: none; /* 밑줄 제거 */
   order: 0;
   flex-grow: 0;
 `;
 
-const SubMenu = styled.div`
+const SubMenu = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +122,7 @@ const SubMenu = styled.div`
   border-style: solid;
   border-color: #000000;
   flex: none;
+  text-decoration: none;
   order: 0;
   flex-grow: 0;
 `;
@@ -134,6 +136,8 @@ const SubMenuTitle = styled.p`
   text-align: center;
   letter-spacing: 0.01em;
   color: ${props => (props.isSelected ? "#000000" : "#ffffff")};
+  text-decoration: none;
+  border-bottom: none;
   flex: none;
   order: 0;
   flex-grow: 0;
