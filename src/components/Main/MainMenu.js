@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 
 const MainMenu = () => {
@@ -10,9 +12,11 @@ const MainMenu = () => {
     "보관함",
   ]);
   const subNovelItem = ["로맨스", "로판", "판타지", "현판", "무협"];
+
   const [selectedItem, setSelectedItem] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [isGenreVisible, setIsGenreVisible] = useState(false);
+
   const handleGenreClick = () => {
     setSelectedGenre(!selectedGenre);
     setIsGenreVisible(prevState => !prevState);
@@ -42,19 +46,26 @@ const MainMenu = () => {
             </Section>
             {isSelected && (
               <>
-                <SubMenu onClick={handleGenreClick} isSelected={selectedGenre}>
-                  <SectionTitle isSelected={selectedGenre}>
-                    {genre}
-                  </SectionTitle>
-                </SubMenu>
+                <Link to="/main/novels">
+                  <SubMenu
+                    onClick={handleGenreClick}
+                    isSelected={selectedGenre}
+                  >
+                    <SectionTitle isSelected={selectedGenre}>
+                      {genre}
+                    </SectionTitle>
+                  </SubMenu>
+                </Link>
                 {isGenreVisible && (
-                  <SubMenuContent>
-                    {subNovelItem.map(subItem => (
-                      <SubMenu key={subItem}>
-                        <SubMenuTitle>{subItem}</SubMenuTitle>
-                      </SubMenu>
-                    ))}
-                  </SubMenuContent>
+                  <Link to="/main/novels">
+                    <SubMenuContent>
+                      {subNovelItem.map(subItem => (
+                        <SubMenu key={subItem}>
+                          <SubMenuTitle>{subItem}</SubMenuTitle>
+                        </SubMenu>
+                      ))}
+                    </SubMenuContent>
+                  </Link>
                 )}
               </>
             )}
