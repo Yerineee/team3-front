@@ -3,10 +3,10 @@ import axios from "axios";
 import { API } from "../../config";
 import styled from "styled-components";
 import ContentSection from "./ContentSection";
+import NovelFreeContent from "./content/NovelFreeContent";
 
 const SubContent = () => {
   const [novel, setNovel] = useState([]);
-  const [comix, setComix] = useState([]);
 
   useEffect(() => {
     axios
@@ -20,29 +20,16 @@ const SubContent = () => {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(API.GET_COMICS)
-      .then(response => {
-        const comixData = response.data.comics;
-        setComix(comixData);
-      })
-      .catch(error => {
-        console.log("Error >>", error);
-      });
-  }, []);
-
   return (
     <Div>
       <Section>
-        <TopicTitle>실시간df 랭킹</TopicTitle>
-        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-        <ContentSection topicTitle={"COMIX"} contentData={comix} />
-      </Section>
-      <Section>
-        <TopicTitle>지금 시리즈sdf가 추천해요</TopicTitle>
-        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-        <ContentSection topicTitle={"COMIX"} contentData={comix} />
+        <TopicTitle>최근 본 작품</TopicTitle>
+        <ContentSection contentData={novel} />
+        <TopicTitle>실시간 랭킹</TopicTitle>
+        <ContentSection contentData={novel} />
+        <NovelFreeContent />
+        <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
+        <ContentSection contentData={novel} />
       </Section>
     </Div>
   );
