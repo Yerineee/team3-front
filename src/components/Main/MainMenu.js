@@ -43,12 +43,9 @@ const MainMenu = () => {
             {isSelected && (
               <>
                 <SubMenu onClick={handleGenreClick} isSelected={selectedGenre}>
-                  <SubMenuTitle
-                    // onClick={handleGenreClick}
-                    // isSelected={selectedGenre}
-                  >
+                  <SectionTitle isSelected={selectedGenre}>
                     {genre}
-                  </SubMenuTitle>
+                  </SectionTitle>
                 </SubMenu>
                 {isGenreVisible && (
                   <SubMenuContent>
@@ -95,6 +92,7 @@ const SectionTitle = styled.p`
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.01em;
+  color: ${props => (props.isSelected ? "#000000" : "#ffffff")};
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -125,7 +123,6 @@ const SubMenuTitle = styled.p`
   text-align: center;
   letter-spacing: 0.01em;
   color: ${props => (props.isSelected ? "#000000" : "#ffffff")};
-  text: ${props => (props.isSelected ? "#000000" : "#ffffff")};
   flex: none;
   order: 0;
   flex-grow: 0;
