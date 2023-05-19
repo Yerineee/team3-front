@@ -18,9 +18,7 @@ const MainContent = () => {
       .catch(error => {
         console.log("Error >>", error);
       });
-  }, []);
 
-  useEffect(() => {
     axios
       .get(API.GET_COMICS)
       .then(response => {
