@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import cookie from "../../assets/Main/cookie.png";
@@ -10,7 +11,7 @@ const MainNavBar = () => {
     <Div>
       <div>
         <ProfileIcon src={profile} />
-        <Link to="/">
+        <Link to="/main">
           <MainLogo src={logo} />
         </Link>
         <CookieIcon src={cookie} />

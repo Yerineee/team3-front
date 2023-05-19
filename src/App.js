@@ -5,8 +5,8 @@ import MainPage from "./pages/MainPage";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>    
-        <Route path="/" element={<MainPage />} />
+      <Routes>
+        <Route path="/main/*" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   );
