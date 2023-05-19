@@ -43,20 +43,20 @@ const MainMenu = () => {
         const isSelected = selectedItem === item;
         return (
           <div key={item}>
-            <SubMenu
+            <Menu
               to={path}
               isSelected={isSelected}
               onClick={() => handleItemClick(item)}
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
-            </SubMenu>
+            </Menu>
             {isSelected && (
               <>
-                <SubMenu onClick={handleGenreClick} isSelected={selectedGenre}>
+                <Menu onClick={handleGenreClick} isSelected={selectedGenre}>
                   <SectionTitle isSelected={selectedGenre}>
                     {genre}
                   </SectionTitle>
-                </SubMenu>
+                </Menu>
                 {isGenreVisible && (
                   <SubMenuContent>
                     {subNovelItem.map(subItem => (
@@ -110,7 +110,7 @@ const SectionTitle = styled.p`
   flex-grow: 0;
 `;
 
-const SubMenu = styled(Link)`
+const Menu = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,6 +118,23 @@ const SubMenu = styled(Link)`
   gap: 10px;
   height: 32px;
   background: #00dc64;
+  border-width: 1.5px 0px;
+  border-style: solid;
+  border-color: #000000;
+  flex: none;
+  text-decoration: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+const SubMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 160px;
+  gap: 10px;
+  height: 32px;
+  background: #c3c3c3;
   border-width: 1.5px 0px;
   border-style: solid;
   border-color: #000000;
