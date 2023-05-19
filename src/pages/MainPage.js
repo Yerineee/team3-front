@@ -6,6 +6,7 @@ import MainMenu from "../components/Main/MainMenu";
 import EventSection from "../components/Main/EventSection";
 import MainContent from "../components/Main/MainContent";
 import SubContent from "../components/Main/SubContent";
+import Footer from "../components/Footer/Footer";
 
 const MainPage = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ const MainPage = () => {
       <MainMenu />
       <EventSection />
       {component}
+      <Footer />
     </Div>
   );
 };

@@ -77,23 +77,6 @@ const MainMenu = () => {
 
 export default MainMenu;
 
-const Section = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 160px;
-  gap: 10px;
-  height: 32px;
-  background: #00dc64;
-  border-width: 1.5px 0px;
-  border-style: solid;
-  border-color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-`;
-
 const SectionTitle = styled.p`
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
@@ -161,14 +144,4 @@ const SubMenuTitle = styled.p`
   cursor: pointer;
 `;
 
-const SubMenuContent = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  gap: 5px;
-  background: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  margin-top: 5px; */
-`;
+const SubMenuContent = styled.div``;
