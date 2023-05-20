@@ -12,7 +12,7 @@ const Ranking = ({ index }) => {
 };
 
 const Ing = () => {
-  return <FreeIcon src={free}></FreeIcon>;
+  return <Icon src={free}></Icon>;
 };
 
 const ContentSlide = ({ contents, sort }) => {
@@ -106,53 +106,11 @@ const Caption = styled.div`
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
 `;
 
-const Icon = styled.div`
-  position: absolute;
-  width: 22px;
-  height: 54px;
-  left: -3px;
-  bottom: -10.1px;
-
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 54px;
-
-  color: rgba(255, 255, 255, 0.95);
-
-  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
-`;
-
-const FreeIcon = styled.img`
+const Icon = styled.img`
   position: absolute;
   width: 15px;
   height: 15px;
   left: 0px;
   top: 0px;
 
-`;
-
-const TenIcon = styled.img`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 0px;
-  top: 0px;
-`;
-
-const TimeDealIcon = styled.img`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 0px;
-  top: 0px;
-`;
-
-const PassIcon = styled.img`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 0px;
-  top: 0px;
 `;
