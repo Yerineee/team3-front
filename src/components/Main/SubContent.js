@@ -26,7 +26,7 @@ const SubContent = () => {
         <TopicTitle>최근 본 작품</TopicTitle>
         <ContentSection contentData={novel} />
         <TopicTitle>실시간 랭킹</TopicTitle>
-        <ContentSection contentData={novel} />
+        <ContentSection contentData={novel} sort={"ranking"}/>
         <NovelFreeContent />
         <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
         <ContentSection contentData={novel} />

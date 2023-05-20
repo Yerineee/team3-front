@@ -7,9 +7,12 @@ import pass from "../../assets/icon/Main/pass.png";
 import timedeal from "../../assets/icon/Main/timedeal.png";
 import ten from "../../assets/icon/Main/ten.png";
 
-
 const Ranking = ({ index }) => {
   return <Caption>{index + 1}</Caption>;
+};
+
+const Ing = () => {
+  return <FreeIcon src={free}></FreeIcon>;
 };
 
 const ContentSlide = ({ contents, sort }) => {
@@ -19,9 +22,9 @@ const ContentSlide = ({ contents, sort }) => {
     case "ranking":
       Component = Ranking; // 대문자로 시작하는 컴포넌트 이름으로 할당
       break;
-    // case "ing":
-    //   Component = SubContent;
-    //   break;
+    case "ing":
+      Component = Ing;
+      break;
     // case "freepass":
     //   Component = SubContent;
     //   break;
@@ -103,22 +106,53 @@ const Caption = styled.div`
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
 `;
 
+const Icon = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 54px;
+  left: -3px;
+  bottom: -10.1px;
+
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 54px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
+`;
+
 const FreeIcon = styled.img`
-  width: 7.81px;
-  height: 10.01px;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 0px;
+  top: 0px;
+
 `;
 
 const TenIcon = styled.img`
-  width: 7.81px;
-  height: 10.01px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0px;
+  top: 0px;
 `;
 
 const TimeDealIcon = styled.img`
-  width: 7.81px;
-  height: 10.01px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0px;
+  top: 0px;
 `;
 
 const PassIcon = styled.img`
-  width: 7.81px;
-  height: 10.01px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0px;
+  top: 0px;
 `;
