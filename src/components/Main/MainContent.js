@@ -34,8 +34,16 @@ const MainContent = () => {
     <Div>
       <Section>
         <TopicTitle>실시간 랭킹</TopicTitle>
-        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-        <ContentSection topicTitle={"COMIX"} contentData={comix} />
+        <ContentSection
+          topicTitle={"NOVEL"}
+          contentData={novel}
+          sort={"ranking"}
+        />
+        <ContentSection
+          topicTitle={"COMIX"}
+          contentData={comix}
+          sort={"ranking"}
+        />
       </Section>
       <Section>
         <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
