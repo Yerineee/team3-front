@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import cookie from "../../assets/Main/cookie.png";
-import logo from "../../assets/Main/logo.png";
+import logo from "../../assets/logo/logo.png";
 import profile from "../../assets/Main/profile.png";
 import search from "../../assets/Main/search.png";
 

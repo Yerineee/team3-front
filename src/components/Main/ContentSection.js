@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ContentSlide from "./ContentSlide";
-import arrow from "../../assets/icon/arrow.png";
+import arrow from "../../assets/icon/Main/arrow.png";
 
 const ContentSection = ({ topicTitle, contentData }) => {
   return (
