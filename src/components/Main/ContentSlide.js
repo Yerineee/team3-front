@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import free from "../../assets/icon/Main/free.png";
 import pass from "../../assets/icon/Main/pass.png";
 import timedeal from "../../assets/icon/Main/timedeal.png";
 import ten from "../../assets/icon/Main/ten.png";
@@ -10,30 +9,32 @@ import ten from "../../assets/icon/Main/ten.png";
 const Ranking = ({ index }) => {
   return <Caption>{index + 1}</Caption>;
 };
-
-const Ing = () => {
-  return <Icon src={free}></Icon>;
+const Ten = () => {
+  return <Icon src={ten}></Icon>;
+};
+const TimeDeal = () => {
+  return <Icon src={timedeal}></Icon>;
+};
+const Pass = () => {
+  return <Icon src={pass}></Icon>;
 };
 
 const ContentSlide = ({ contents, sort }) => {
-  let Component; // 대문자로 시작하는 변수 이름으로 수정
+  let Component;
 
   switch (sort) {
     case "ranking":
-      Component = Ranking; // 대문자로 시작하는 컴포넌트 이름으로 할당
+      Component = Ranking;
       break;
-    case "ing":
-      Component = Ing;
+    case "freepass":
+      Component = Pass;
       break;
-    // case "freepass":
-    //   Component = SubContent;
-    //   break;
-    // case "freetoday":
-    //   Component = SubContent;
-    //   break;
-    // case "timedeal":
-    //   Component = SubContent;
-    //   break;
+    case "freetoday":
+      Component = Ten;
+      break;
+    case "timedeal":
+      Component = TimeDeal;
+      break;
     default:
       Component = null;
   }
@@ -51,7 +52,13 @@ const ContentSlide = ({ contents, sort }) => {
         {contents.map((content, index) => (
           <ImageContainer key={content.contentId}>
             <Img backgroundImage={content.image} alt={content.contentId}>
-              {Component && <Component index={index} />}
+              {sort === "ranking" ? (
+                <Component index={index} />
+              ) : (
+                <IconContainer>
+                  {Component && <Component index={index} />}
+                </IconContainer>
+              )}
             </Img>
           </ImageContainer>
         ))}
@@ -76,6 +83,10 @@ const Img = styled.div`
   right: 0%;
   top: 0%;
   bottom: 6.06%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   height: 155px;
   width: 115px;
@@ -106,11 +117,12 @@ const Caption = styled.div`
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
 `;
 
-const Icon = styled.img`
+const IconContainer = styled.div`
   position: absolute;
   width: 15px;
   height: 15px;
   left: 0px;
   top: 0px;
-
 `;
+
+const Icon = styled.img``;
