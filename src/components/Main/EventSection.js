@@ -1,68 +1,59 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
-import Slider from "react-slick";
-import EventSlide from "./EventSlide";
-import eventexample1 from "../../assets/Main/eventexample1.jpeg";
-import eventexample2 from "../../assets/Main/eventexample2.jpeg";
-import eventexample3 from "../../assets/Main/eventexample3.jpeg";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { API } from "../../config";
 
 const EventSection = () => {
-  const TOTAL_SLIDES = 2;
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideRef = useRef(null);
-  const nextSlide = () => {
-    if (currentSlide >= TOTAL_SLIDES) {
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-  const prevSlide = () => {
-    if (currentSlide === 0) {
-      setCurrentSlide(TOTAL_SLIDES);
-    } else {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
-    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
-  }, [currentSlide]);
+    axios
+      .get(API.GET_EVENT)
+      .then(response => {
+        const eventsData = response.data.events;
+        setEvents(eventsData);
+      })
+      .catch(error => {
+        console.log("Error >>", error);
+      });
+  }, []);
 
   return (
-    <Container>
-      {currentSlide}
-      <SliderContainer ref={slideRef}>
-        <EventSlide img={eventexample1} />
-        <EventSlide img={eventexample2} />
-        <EventSlide img={eventexample3} />
-      </SliderContainer>
-      <Button onClick={prevSlide}>Previous Slide</Button>
-      <Button onClick={nextSlide}>Next Slide</Button>
-    </Container>
+    <Div>
+      <Carousel
+        showThumbs={false}
+        showStatus={false}
+        showArrows={false}
+        showIndicators={false}
+        infiniteLoop
+        autoPlay // 자동 재생
+        interval={3000} // 이미지 전환 간격(ms)
+      >
+        {events.map(event => (
+          <ImageContainer key={event.eventId}>
+            <img src={event.image} alt={event.eventId} />
+          </ImageContainer>
+        ))}
+      </Carousel>
+    </Div>
   );
 };
 
 export default EventSection;
 
-const Container = styled.div`
-  width: 60%;
-  overflow: hidden;
+const Div = styled.div`
+  margin-bottom: 46.72px;
 `;
-const Button = styled.button`
-  all: unset;
-  border: 1px solid coral;
-  padding: 0.5em 2em;
-  color: coral;
-  border-radius: 10px;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    background-color: coral;
-    color: #fff;
-  }
-`;
-const SliderContainer = styled.div`
-  width: 100%;
-  display: flex;
+
+const ImageContainer = styled.div`
+  width: 357px;
+  height: 209px;
+  left: 0px;
+  top: 0px;
+
+  margin: auto;
+  margin-top: 31px;
+  margin-bottom: 46.72px;
 `;

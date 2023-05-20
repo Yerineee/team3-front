@@ -1,17 +1,25 @@
+import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import cookie from "../../assets/Main/cookie.png";
-import logo from "../../assets/Main/logo.png";
-import profile from "../../assets/Main/profile.png";
-import search from "../../assets/Main/search.png";
+import { Link, useNavigate } from "react-router-dom";
+import cookie from "../../assets/icon/Main/cookie.png";
+import logo from "../../assets/logo/logo.png";
+import profile from "../../assets/icon/Main/profile.png";
+import search from "../../assets/icon/Main/search.png";
 
 const MainNavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate("/main"); // 로고 클릭 시 "/main" 경로로 이동
+    window.location.reload(); // 새로고침
+  };
+
   return (
     <Div>
       <div>
         <ProfileIcon src={profile} />
-        <Link to="/">
-          <MainLogo src={logo} />
+        <Link to="/main">
+          <MainLogo src={logo} onClick={handleLogoClick} />
         </Link>
         <CookieIcon src={cookie} />
         <SearchIcon src={search} />
@@ -29,7 +37,6 @@ const Div = styled.div`
   display: flex;
   align-items: center;
 
-  width: 100%;
   height: 141px;
   background-color: #00dc64;
 `;
