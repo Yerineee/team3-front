@@ -3,27 +3,54 @@ import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const ContentSlide = ({ contents }) => {
+const Ranking = ({ index }) => {
+  return <Caption>{index + 1}</Caption>;
+};
+
+const ContentSlide = ({ contents, sort }) => {
+  let Component; // 대문자로 시작하는 변수 이름으로 수정
+
+  switch (sort) {
+    case "ranking":
+      Component = Ranking; // 대문자로 시작하는 컴포넌트 이름으로 할당
+      break;
+    // case "ing":
+    //   Component = SubContent;
+    //   break;
+    // case "freepass":
+    //   Component = SubContent;
+    //   break;
+    // case "freetoday":
+    //   Component = SubContent;
+    //   break;
+    // case "timedeal":
+    //   Component = SubContent;
+    //   break;
+    default:
+      Component = null;
+  }
+
   return (
     <>
       <Carousel
-        showStatus={false} // 상태 표시줄 숨김
-        showIndicators={false} // 인디케이터 숨김
+        showStatus={false}
+        showIndicators={false}
         showArrows={false}
-        showThumbs={false} // 썸네일 숨김
-        centerMode // 중앙 정렬 모드 사용
-        centerSlidePercentage={100 / 3} // 가로 길이의 33.33%만큼 보여줌
+        showThumbs={false}
+        centerMode
+        centerSlidePercentage={100 / 3}
       >
-        {contents.map(content => (
+        {contents.map((content, index) => (
           <ImageContainer key={content.contentId}>
-            <Img src={content.image} alt={content.contentId} />
+            <Img backgroundImage={content.image} alt={content.contentId}>
+              {Component && <Component index={index} />}
+            </Img>
           </ImageContainer>
         ))}
       </Carousel>
     </>
   );
 };
-
 export default ContentSlide;
 
 const ImageContainer = styled.div`
@@ -33,12 +60,9 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 0px;
-  margin-right: 6px;
 `;
 
-const Img = styled.img`
+const Img = styled.div`
   position: absolute;
   left: 0%;
   right: 0%;
@@ -49,10 +73,27 @@ const Img = styled.img`
   width: 115px;
   border-radius: 5px;
 
-  //padding-right: 6px;
-  max-width: 100%; /* 이미지의 최대 너비를 100%로 설정하여 슬라이드 내에 맞춥니다 */
-  max-height: 100%; /* 이미지의 최대 높이를 100%로 설정하여 슬라이드 내에 맞춥니다 */
-  object-fit: contain; /* 이미지가 왜곡되지 않도록 contain을 설정합니다 */
-
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 5px;
+`;
+
+const Caption = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 54px;
+  left: -3px;
+  bottom: -10.1px;
+
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 54px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
 `;

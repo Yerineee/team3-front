@@ -27,7 +27,7 @@ const MainPage = () => {
       <MainNavBar />
       <MainMenu />
       <EventSection />
-      {component}
+      <ComponentSection>{component}</ComponentSection>
       <Footer />
     </Div>
   );
@@ -37,4 +37,8 @@ export default MainPage;
 const Div = styled.div`
   width: 100%;
   height: 100%;
+`;
+
+const ComponentSection = styled.div`
+  margin: 15px;
 `;

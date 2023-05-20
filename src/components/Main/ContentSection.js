@@ -3,14 +3,14 @@ import styled from "styled-components";
 import ContentSlide from "./ContentSlide";
 import arrow from "../../assets/icon/Main/arrow.png";
 
-const ContentSection = ({ topicTitle, contentData }) => {
+const ContentSection = ({ topicTitle, contentData, sort }) => {
   return (
     <div>
       <ContentContainer>
         <TopicTitle>{topicTitle}</TopicTitle>
         <MoreIcon src={arrow} />
       </ContentContainer>
-      <ContentSlide contents={contentData} />
+      <ContentSlide contents={contentData} sort={sort} />
     </div>
   );
 };
