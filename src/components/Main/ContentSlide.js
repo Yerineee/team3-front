@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import free from "../../assets/icon/Main/free.png";
+import pass from "../../assets/icon/Main/pass.png";
+import timedeal from "../../assets/icon/Main/timedeal.png";
+import ten from "../../assets/icon/Main/ten.png";
+
 
 const Ranking = ({ index }) => {
   return <Caption>{index + 1}</Caption>;
@@ -96,4 +101,24 @@ const Caption = styled.div`
   color: rgba(255, 255, 255, 0.95);
 
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
+`;
+
+const FreeIcon = styled.img`
+  width: 7.81px;
+  height: 10.01px;
+`;
+
+const TenIcon = styled.img`
+  width: 7.81px;
+  height: 10.01px;
+`;
+
+const TimeDealIcon = styled.img`
+  width: 7.81px;
+  height: 10.01px;
+`;
+
+const PassIcon = styled.img`
+  width: 7.81px;
+  height: 10.01px;
 `;
