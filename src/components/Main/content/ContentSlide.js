@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import pass from "../../assets/icon/Main/pass.png";
-import timedeal from "../../assets/icon/Main/timedeal.png";
-import ten from "../../assets/icon/Main/ten.png";
+import pass from "../../../assets/icon/Main/pass.png";
+import timedeal from "../../../assets/icon/Main/timedeal.png";
+import ten from "../../../assets/icon/Main/ten.png";
 
 const Ranking = ({ index }) => {
   return <Caption>{index + 1}</Caption>;

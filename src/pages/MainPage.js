@@ -1,11 +1,11 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import MainNavBar from "../components/Main/MainNavBar";
-import MainMenu from "../components/Main/MainMenu";
-import EventSection from "../components/Main/EventSection";
-import MainContent from "../components/Main/MainContent";
-import SubContent from "../components/Main/SubContent";
+import MainNavBar from "../components/Main/nav/MainNavBar";
+import MainMenu from "../components/Main/menu/MainMenu";
+import EventSection from "../components/Main/event/EventSection";
+import MainContent from "../components/Main/content/MainContent";
+import SubContent from "../components/Main/content/SubContent";
 import Footer from "../components/Footer/Footer";
 
 const MainPage = () => {
