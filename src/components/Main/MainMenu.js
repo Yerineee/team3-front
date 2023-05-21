@@ -20,12 +20,12 @@ const MainMenu = () => {
     setIsGenreVisible(!isGenreVisible);
   };
 
-  const handleItemClick = (item) => {
+  const handleItemClick = item => {
     if (selectedItem === item) {
-      setSelectedItem(""); // 같은 아이템을 다시 클릭하면 선택 해제
+      setSelectedItem("");
       setSectionItem(["NOVEL", "COMIX", "시리즈 에디션", "보관함"]);
       setPath("/main/novels");
-    } else {
+    } else if (item === "NOVEL") {
       setSelectedItem(item);
       setSectionItem(["NOVEL"]);
       setPath("/main");
@@ -34,14 +34,17 @@ const MainMenu = () => {
 
   return (
     <>
-      {sectionItem.map((item) => {
+      {sectionItem.map(item => {
         const isSelected = selectedItem === item;
+        const isClickable = item === "NOVEL"; // NOVEL 메뉴만 클릭 가능
+
         return (
           <div key={item}>
             <Menu
               to={path}
               isSelected={isSelected}
-              onClick={() => handleItemClick(item)}
+              onClick={() => isClickable && handleItemClick(item)} // 클릭 가능한 경우에만 핸들러 호출
+              clickable={isClickable} // 클릭 가능한 경우에만 스타일 적용
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
             </Menu>
@@ -54,7 +57,7 @@ const MainMenu = () => {
                 </Menu>
                 {isGenreVisible && (
                   <SubMenuContent>
-                    {subNovelItem.map((subItem) => (
+                    {subNovelItem.map(subItem => (
                       <SubMenu key={subItem}>
                         <SubMenuTitle>{subItem}</SubMenuTitle>
                       </SubMenu>
