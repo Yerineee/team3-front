@@ -32,12 +32,12 @@ const SubContent = () => {
       ) : (
         <Section>
           <TopicTitle>최근 본 작품</TopicTitle>
-          <ContentSection contentData={novel} />
+          <ContentSection contentData={novel} arrowCheck={false}/>
           <TopicTitle>실시간 랭킹</TopicTitle>
-          <ContentSection contentData={novel} sort={"ranking"} />
+          <ContentSection contentData={novel} sort={"ranking"} arrowCheck={true}/>
           <NovelFreeContent />
           <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-          <ContentSection contentData={novel} />
+          <ContentSection contentData={novel} arrowCheck={false}/>
         </Section>
       )}
     </Div>

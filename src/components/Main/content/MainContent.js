@@ -48,17 +48,19 @@ const MainContent = () => {
               topicTitle={"NOVEL"}
               contentData={novel}
               sort={"ranking"}
+              arrowCheck={true}
             />
             <ContentSection
               topicTitle={"COMIX"}
               contentData={comix}
               sort={"ranking"}
+              arrowCheck={true}
             />
           </Section>
           <Section>
             <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-            <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-            <ContentSection topicTitle={"COMIX"} contentData={comix} />
+            <ContentSection topicTitle={"NOVEL"} contentData={novel} arrowCheck={false}/>
+            <ContentSection topicTitle={"COMIX"} contentData={comix} arrowCheck={false}/>
           </Section>
         </>
       )}
