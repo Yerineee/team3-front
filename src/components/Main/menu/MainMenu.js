@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 
 const MainMenu = () => {
@@ -15,25 +14,21 @@ const MainMenu = () => {
   const subNovelItem = ["로맨스", "로판", "판타지", "현판", "무협"];
 
   const [selectedItem, setSelectedItem] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
   const [isGenreVisible, setIsGenreVisible] = useState(false);
 
   const handleGenreClick = () => {
-    setSelectedGenre(!selectedGenre);
-    setIsGenreVisible(prevState => !prevState);
+    setIsGenreVisible(!isGenreVisible);
   };
 
   const handleItemClick = item => {
     if (selectedItem === item) {
-      setSelectedItem(""); // 같은 아이템을 다시 클릭하면 선택 해제
+      setSelectedItem("");
       setSectionItem(["NOVEL", "COMIX", "시리즈 에디션", "보관함"]);
       setPath("/main/novels");
-      console.log(path);
-    } else {
+    } else if (item === "NOVEL") {
       setSelectedItem(item);
       setSectionItem(["NOVEL"]);
       setPath("/main");
-      console.log(path);
     }
   };
 
@@ -41,19 +36,22 @@ const MainMenu = () => {
     <>
       {sectionItem.map(item => {
         const isSelected = selectedItem === item;
+        const isClickable = item === "NOVEL"; // NOVEL 메뉴만 클릭 가능
+
         return (
           <div key={item}>
             <Menu
               to={path}
               isSelected={isSelected}
-              onClick={() => handleItemClick(item)}
+              onClick={() => isClickable && handleItemClick(item)} // 클릭 가능한 경우에만 핸들러 호출
+              clickable={isClickable} // 클릭 가능한 경우에만 스타일 적용
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
             </Menu>
             {isSelected && (
               <>
-                <Menu onClick={handleGenreClick} isSelected={selectedGenre}>
-                  <SectionTitle isSelected={selectedGenre}>
+                <Menu onClick={handleGenreClick} isSelected={isGenreVisible}>
+                  <SectionTitle isSelected={isGenreVisible}>
                     {genre}
                   </SectionTitle>
                 </Menu>
@@ -99,7 +97,7 @@ const Menu = styled(Link)`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-  height: 32px;
+  height: 37px;
   background: #00dc64;
   border-width: 1.5px 0px;
   border-style: solid;
@@ -116,7 +114,7 @@ const SubMenu = styled.div`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-  height: 32px;
+  height: 37px;
   background: #c3c3c3;
   border-width: 1.5px 0px;
   border-style: solid;

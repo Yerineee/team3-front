@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import ContentSlide from "./ContentSlide";
-import arrow from "../../assets/icon/Main/arrow.png";
+import arrow from "../../../assets/icon/Main/arrow.png";
 
-const ContentSection = ({ topicTitle, contentData, sort }) => {
+const ContentSection = ({ topicTitle, contentData, sort, arrowCheck }) => {
   return (
     <div>
       <ContentContainer>
-        <TopicTitle>{topicTitle}</TopicTitle>
-        <MoreIcon src={arrow} />
+        {topicTitle && <TopicTitle>{topicTitle}</TopicTitle>}
+        {arrowCheck && <MoreIcon src={arrow} topicTitle={topicTitle} />}
       </ContentContainer>
       <ContentSlide contents={contentData} sort={sort} />
     </div>
@@ -35,12 +35,18 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative
 
   padding-right: 15px;
   margin-bottom: 10px;
 `;
 
 const MoreIcon = styled.img`
+  position: absolute;
+  right: 0; /* 오른쪽 정렬 */
+  margin-top: ${props =>
+    props.topicTitle ? "5px" : "-24px"}; /* 상단 위치 조정 */
+  margin-right: 25px;
   width: 7.81px;
   height: 10.01px;
 `;

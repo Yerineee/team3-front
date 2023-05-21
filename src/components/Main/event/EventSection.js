@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { API } from "../../config";
+import { API } from "../../../config";
 
 const EventSection = () => {
   const [events, setEvents] = useState([]);
@@ -17,6 +17,7 @@ const EventSection = () => {
       })
       .catch(error => {
         console.log("Error >>", error);
+        console.log(error.code);
       });
   }, []);
 
