@@ -1,14 +1,18 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 // icons
 import score from "../../assets/icon/Detail/score.png";
 import comment from "../../assets/icon/Detail/comment.png";
+import open from "../../assets/icon/Detail/open.png";
 
 // components
 import HashtagList from "./HashtagList";
 
 // 작품 정보
 const ContentInfo = ({ details }) => {
+  const [isShow, setIsShow] = useState(false); // 긴 설명 보여주는지
+
   return (
     <Div>
       <TopSection>
@@ -33,7 +37,14 @@ const ContentInfo = ({ details }) => {
         <ContentMainInfo>
           {details[0]?.genre}·{details[0]?.author}
         </ContentMainInfo>
-        <ContentDescription>{details[0]?.shortDescription}</ContentDescription>
+        <DescriptionSection>
+          {isShow ? (
+            <Description>{details[0]?.longDescription}</Description>
+          ) : (
+            <Description>{details[0]?.shortDescription}</Description>
+          )}
+          <OpenBtn src={open} onClick={() => setIsShow(!isShow)} />
+        </DescriptionSection>
       </Wrapper>
     </Div>
   );
@@ -99,18 +110,29 @@ const ContentTitle = styled.p`
   font-size: 18px;
   font-weight: bold;
 
-  margin: 32px 0px 14px 0px;
+  margin: 32px 0px 14px 30px;
 `;
 
 // 작품 핵심 정보 (장르, 작가 등)
 const ContentMainInfo = styled.p`
   font-size: 13px;
-  margin-bottom: 0px 0px 0px 16px;
+  margin: 0px 0px 4px 30px;
+`;
+
+const DescriptionSection = styled.div`
+  display: flex;
 `;
 
 // 작품 내용 설명
-const ContentDescription = styled.p`
+const Description = styled.p`
   width: 273px;
   font-size: 13px;
   color: #949494;
+
+  margin: 12px 0px 24px 30px;
+`;
+
+const OpenBtn = styled.img`
+  width: 44px;
+  height: 44px;
 `;

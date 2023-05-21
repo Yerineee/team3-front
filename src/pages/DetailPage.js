@@ -24,7 +24,8 @@ const DetailPage = () => {
         author: "이유진,반지",
         shortDescription:
           "그 곳, 새싹약국엔 약국계의 F4, 꽃미남 4인방 약사들이 있다.",
-        longDescription: "",
+        longDescription:
+          "그 곳, 새싹약국엔 약국계의 F4, 꽃미남 4인방 약사들이 있다. 훈훈한 새싹들이 친절하게 약을 지어주는 약국계의 올모스트 파라다이스 새싹약국. 어느날 학비 마련하랴, 생활비 마련하랴, 사연 많고 가난한 만년 알바생 영이 전산보조원으로 낙하산을 타고 내려오게 되는데……. 싸가지가 바가지인 냉미남 약사 고찬영과 뻔뻔하고 능청갑에 저질이기까지한 알바생 서 영의 이해타산 상부상조 계약연애 계약결혼 스캔들. 사랑 앞에 지조있는 남자와 심남만 열두명인 여자의 대략난감 로맨스.",
         totalEpisodes: 87,
         imageUrl:
           "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAyMjZfMTMz%2FMDAxNjQ1ODc3MjcyNzAw.hJIuZtpsiJVEsMtKqmZ1Kumr_T9igZ91lcNBWxtQl24g.bp28jqJSADyzgk_Yc5IbNM7cfftmddjFZBKqQRRMT_4g.JPEG.dlswn1007%2F%25BB%25E7%25B6%25FB%25C0%25C7-%25BB%25F5%25BD%25CF%25BE%25E0%25B1%25B9%2528%25BC%25F6%25C1%25A4%2529.jpg&type=sc960_832",
