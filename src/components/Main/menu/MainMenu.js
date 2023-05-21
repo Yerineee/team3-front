@@ -97,7 +97,7 @@ const Menu = styled(Link)`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-  height: 32px;
+  height: 37px;
   background: #00dc64;
   border-width: 1.5px 0px;
   border-style: solid;
@@ -114,7 +114,7 @@ const SubMenu = styled.div`
   align-items: center;
   padding: 15px 160px;
   gap: 10px;
-  height: 32px;
+  height: 37px;
   background: #c3c3c3;
   border-width: 1.5px 0px;
   border-style: solid;

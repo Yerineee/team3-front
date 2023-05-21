@@ -53,21 +53,24 @@ const NovelFreeContent = () => {
     <Div>
       <Section>
         <TopicTitle>무료 작품</TopicTitle>
-        <ContentSection topicTitle={"연재중"} contentData={ing} />
+        <ContentSection topicTitle={"연재중"} contentData={freetoday} arrowCheck={true}/>
         <ContentSection
           topicTitle={"FREE PASS"}
-          contentData={freepass}
+          contentData={freetoday}
           sort={"freepass"}
+          arrowCheck={true}
         />
         <ContentSection
           topicTitle={"매일 10시 무료"}
           contentData={freetoday}
           sort={"freetoday"}
+          arrowCheck={true}
         />
         <ContentSection
           topicTitle={"TIME DEAL"}
-          contentData={timedeal}
+          contentData={freetoday}
           sort={"timedeal"}
+          arrowCheck={true}
         />
       </Section>
     </Div>
