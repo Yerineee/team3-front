@@ -7,8 +7,10 @@ import NovelFreeContent from "./content/NovelFreeContent";
 
 const SubContent = () => {
   const [novel, setNovel] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(API.GET_NOVELS)
       .then(response => {
@@ -17,20 +19,27 @@ const SubContent = () => {
       })
       .catch(error => {
         console.log("Error >>", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
   return (
     <Div>
-      <Section>
-        <TopicTitle>최근 본 작품</TopicTitle>
-        <ContentSection contentData={novel} />
-        <TopicTitle>실시간 랭킹</TopicTitle>
-        <ContentSection contentData={novel} sort={"ranking"}/>
-        <NovelFreeContent />
-        <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-        <ContentSection contentData={novel} />
-      </Section>
+      {isLoading ? (
+        <LoadingText>Loading...</LoadingText>
+      ) : (
+        <Section>
+          <TopicTitle>최근 본 작품</TopicTitle>
+          <ContentSection contentData={novel} />
+          <TopicTitle>실시간 랭킹</TopicTitle>
+          <ContentSection contentData={novel} sort={"ranking"} />
+          <NovelFreeContent />
+          <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
+          <ContentSection contentData={novel} />
+        </Section>
+      )}
     </Div>
   );
 };
@@ -53,4 +62,14 @@ const TopicTitle = styled.p`
 
 const Section = styled.div`
   margin-bottom: 52px;
+`;
+
+const LoadingText = styled.p`
+  text-align: center;
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
 `;
