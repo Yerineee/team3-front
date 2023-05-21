@@ -7,8 +7,11 @@ import ContentSection from "./ContentSection";
 const MainContent = () => {
   const [novel, setNovel] = useState([]);
   const [comix, setComix] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+
     axios
       .get(API.GET_NOVELS)
       .then(response => {
@@ -27,29 +30,38 @@ const MainContent = () => {
       })
       .catch(error => {
         console.log("Error >>", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
   return (
     <Div>
-      <Section>
-        <TopicTitle>실시간 랭킹</TopicTitle>
-        <ContentSection
-          topicTitle={"NOVEL"}
-          contentData={novel}
-          sort={"ranking"}
-        />
-        <ContentSection
-          topicTitle={"COMIX"}
-          contentData={comix}
-          sort={"ranking"}
-        />
-      </Section>
-      <Section>
-        <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-        <ContentSection topicTitle={"NOVEL"} contentData={novel} />
-        <ContentSection topicTitle={"COMIX"} contentData={comix} />
-      </Section>
+      {isLoading ? (
+        <LoadingText>Loading...</LoadingText>
+      ) : (
+        <>
+          <Section>
+            <TopicTitle>실시간 랭킹</TopicTitle>
+            <ContentSection
+              topicTitle={"NOVEL"}
+              contentData={novel}
+              sort={"ranking"}
+            />
+            <ContentSection
+              topicTitle={"COMIX"}
+              contentData={comix}
+              sort={"ranking"}
+            />
+          </Section>
+          <Section>
+            <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
+            <ContentSection topicTitle={"NOVEL"} contentData={novel} />
+            <ContentSection topicTitle={"COMIX"} contentData={comix} />
+          </Section>
+        </>
+      )}
     </Div>
   );
 };
@@ -72,4 +84,14 @@ const TopicTitle = styled.p`
 
 const Section = styled.div`
   margin-bottom: 52px;
+`;
+
+const LoadingText = styled.p`
+  text-align: center;
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
 `;

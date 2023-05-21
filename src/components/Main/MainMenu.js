@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 
 const MainMenu = () => {
@@ -15,31 +14,27 @@ const MainMenu = () => {
   const subNovelItem = ["로맨스", "로판", "판타지", "현판", "무협"];
 
   const [selectedItem, setSelectedItem] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
   const [isGenreVisible, setIsGenreVisible] = useState(false);
 
   const handleGenreClick = () => {
-    setSelectedGenre(!selectedGenre);
-    setIsGenreVisible(prevState => !prevState);
+    setIsGenreVisible(!isGenreVisible);
   };
 
-  const handleItemClick = item => {
+  const handleItemClick = (item) => {
     if (selectedItem === item) {
       setSelectedItem(""); // 같은 아이템을 다시 클릭하면 선택 해제
       setSectionItem(["NOVEL", "COMIX", "시리즈 에디션", "보관함"]);
       setPath("/main/novels");
-      console.log(path);
     } else {
       setSelectedItem(item);
       setSectionItem(["NOVEL"]);
       setPath("/main");
-      console.log(path);
     }
   };
 
   return (
     <>
-      {sectionItem.map(item => {
+      {sectionItem.map((item) => {
         const isSelected = selectedItem === item;
         return (
           <div key={item}>
@@ -52,14 +47,14 @@ const MainMenu = () => {
             </Menu>
             {isSelected && (
               <>
-                <Menu onClick={handleGenreClick} isSelected={selectedGenre}>
-                  <SectionTitle isSelected={selectedGenre}>
+                <Menu onClick={handleGenreClick} isSelected={isGenreVisible}>
+                  <SectionTitle isSelected={isGenreVisible}>
                     {genre}
                   </SectionTitle>
                 </Menu>
                 {isGenreVisible && (
                   <SubMenuContent>
-                    {subNovelItem.map(subItem => (
+                    {subNovelItem.map((subItem) => (
                       <SubMenu key={subItem}>
                         <SubMenuTitle>{subItem}</SubMenuTitle>
                       </SubMenu>

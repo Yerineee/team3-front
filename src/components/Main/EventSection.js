@@ -17,6 +17,7 @@ const EventSection = () => {
       })
       .catch(error => {
         console.log("Error >>", error);
+        console.log(error.code);
       });
   }, []);
 
