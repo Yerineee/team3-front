@@ -14,16 +14,13 @@ const HashtagList = ({ hashtags }) => {
 export default HashtagList;
 
 const ListWrapper = styled.div`
-  position: absolute;
-  right: 20px;
-  top: 104px;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   width: 148px;
   height: 88px;
+  margin: 40px 0px 30px 20px;
 `;
 
 const Hashtag = styled.span`
@@ -31,7 +28,8 @@ const Hashtag = styled.span`
   align-items: center;
   justify-content: center;
 
-  background-color: #fff;
+  background-color: #ffffff;
+  font-family: "Noto Sans KR Regular";
   font-size: 13px;
 
   height: 24px;
