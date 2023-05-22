@@ -62,6 +62,8 @@ const TopBtnSection = styled.div`
   justify-content: space-between;
 
   width: 327px;
+  margin-top: 16px;
+  margin-bottom: 22px;
 `;
 
 // 선택 구매 버튼
@@ -70,7 +72,7 @@ const BuyBtn = styled.span`
   align-items: center;
 
   width: 78px;
-  height: 40px;
+  height: 14px;
 `;
 
 // 선택 구매 버튼 텍스트
@@ -96,7 +98,7 @@ const SortBtn = styled.span`
   justify-content: space-between;
   align-items: center;
   width: 93px;
-  height: 40px;
+  height: 14px;
 `;
 
 // 최신순 정렬 버튼 (클릭된 버튼)
