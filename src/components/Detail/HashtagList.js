@@ -13,6 +13,7 @@ const HashtagList = ({ hashtags }) => {
 
 export default HashtagList;
 
+// 해시태그 리스트 wrapper
 const ListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +24,7 @@ const ListWrapper = styled.div`
   margin: 40px 0px 30px 20px;
 `;
 
+// 해시태그
 const Hashtag = styled.span`
   display: flex;
   align-items: center;
