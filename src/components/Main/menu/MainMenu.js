@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const MainMenu = () => {
   const genre = "장르";
-  const [path, setPath] = useState("/main/novels");
+  const [path, setPath] = useState("/novels");
   const [sectionItem, setSectionItem] = useState([
     "NOVEL",
     "COMIX",
@@ -24,11 +24,11 @@ const MainMenu = () => {
     if (selectedItem === item) {
       setSelectedItem("");
       setSectionItem(["NOVEL", "COMIX", "시리즈 에디션", "보관함"]);
-      setPath("/main/novels");
+      setPath("/novels");
     } else if (item === "NOVEL") {
       setSelectedItem(item);
       setSectionItem(["NOVEL"]);
-      setPath("/main");
+      setPath("/");
     }
   };
 

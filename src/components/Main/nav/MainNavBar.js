@@ -10,7 +10,7 @@ const MainNavBar = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate("/main"); // 로고 클릭 시 "/main" 경로로 이동
+    navigate("/"); // 로고 클릭 시 "/main" 경로로 이동
     window.location.reload(); // 새로고침
   };
 
@@ -18,7 +18,7 @@ const MainNavBar = () => {
     <Div>
       <div>
         <ProfileIcon src={profile} />
-        <Link to="/main">
+        <Link to="/">
           <MainLogo src={logo} onClick={handleLogoClick} />
         </Link>
         <CookieIcon src={cookie} />
