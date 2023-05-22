@@ -35,29 +35,25 @@ const DetailPage = () => {
     ]);
     setEpisodes([
       {
-        episodes: [
-          {
-            pageId: 1,
-            episodeNumber: 1,
-            title: "프롤로그_우리 방금 이혼했어요",
-            date: "2018-05-02",
-            isFree: true,
-          },
-          {
-            pageId: 2,
-            episodeNumber: 2,
-            title: "어서 오세요, 새싹 약국입니다",
-            date: "2018-05-02",
-            isFree: true,
-          },
-          {
-            pageId: 3,
-            episodeNumber: 3,
-            title: "망했다. 이 면접은",
-            date: "2018-05-02",
-            isFree: true,
-          },
-        ],
+        pageId: 1,
+        episodeNumber: 1,
+        title: "프롤로그_우리 방금 이혼했어요",
+        date: "2018-05-02",
+        isFree: true,
+      },
+      {
+        pageId: 2,
+        episodeNumber: 2,
+        title: "어서 오세요, 새싹 약국입니다",
+        date: "2018-05-02",
+        isFree: true,
+      },
+      {
+        pageId: 3,
+        episodeNumber: 3,
+        title: "망했다. 이 면접은",
+        date: "2018-05-02",
+        isFree: true,
       },
     ]);
     setRecommend([
@@ -113,7 +109,7 @@ const DetailPage = () => {
 
       <ContentInfo details={details} />
 
-      <EpisodeList episodes={episodes} />
+      <EpisodeList imageUrl={details.imageUrl} episodes={episodes} />
       <FirstViewBtn>무료로 첫화보기</FirstViewBtn>
     </Div>
   );
@@ -122,6 +118,8 @@ const DetailPage = () => {
 export default DetailPage;
 
 const Div = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -137,13 +135,16 @@ const CoverBackground = styled.div`
 
 const FirstViewBtn = styled.button`
   position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
   bottom: 100px;
 
   width: 280px;
   height: 46px;
 
   background-color: #3c3c3c;
-  color: #fff;
+  color: #ffffff;
+  font-family: "Noto Sans KR Medium";
   font-size: 16px;
   border-radius: 61px;
 `;

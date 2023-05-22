@@ -103,19 +103,24 @@ const BtnImg = styled.img`
 const BtnText = styled.p`
   margin-top: 4px;
   margin-bottom: 0px;
+
+  font-family: "Noto Sans KR Regular";
+  font-size: 16px;
 `;
 
 // 작품 제목
 const ContentTitle = styled.p`
+  font-family: "Noto Sans KR Bold";
   font-size: 18px;
-  font-weight: bold;
 
   margin: 32px 0px 14px 30px;
 `;
 
 // 작품 핵심 정보 (장르, 작가 등)
 const ContentMainInfo = styled.p`
+  font-family: "Noto Sans KR Regular";
   font-size: 13px;
+
   margin: 0px 0px 4px 30px;
 `;
 
@@ -126,6 +131,7 @@ const DescriptionSection = styled.div`
 // 작품 내용 설명
 const Description = styled.p`
   width: 273px;
+  font-family: "Noto Sans KR Regular";
   font-size: 13px;
   color: #949494;
 

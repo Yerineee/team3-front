@@ -28,7 +28,8 @@ const Hashtag = styled.span`
   align-items: center;
   justify-content: center;
 
-  background-color: #fff;
+  background-color: #ffffff;
+  font-family: "Noto Sans KR Regular";
   font-size: 13px;
 
   height: 24px;
