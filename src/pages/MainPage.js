@@ -12,10 +12,10 @@ const MainPage = () => {
   const { pathname } = useLocation();
   let component;
   switch (pathname) {
-    case "/main":
+    case "/":
       component = <MainContent />;
       break;
-    case "/main/novels":
+    case "/novels":
       component = <SubContent />;
       break;
     default:
