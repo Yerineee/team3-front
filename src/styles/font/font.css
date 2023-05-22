@@ -27,3 +27,13 @@
     url("./NotoSansKR-Bold.otf") format("woff"),
     url("./NotoSansKR-Bold.otf") format("truetype");
 }
+
+@font-face {
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./AppleSDGothicNeoRegular.otf") format("woff2"),
+    url("./AppleSDGothicNeoRegular.otf") format("woff"),
+    url("./AppleSDGothicNeoRegular.otf") format("truetype");
+}
