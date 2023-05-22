@@ -38,10 +38,10 @@ const EpisodeItem = ({
 export default EpisodeItem;
 
 const ItemWrapper = styled.div`
-  width: 100%;
+  width: 327px;
   height: 56px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   margin-bottom: 16px;
