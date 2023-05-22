@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import pass from "../../../assets/icon/Main/pass.png";
@@ -51,15 +52,18 @@ const ContentSlide = ({ contents, sort }) => {
       >
         {contents.map((content, index) => (
           <ImageContainer key={content.contentId}>
-            <Img backgroundImage={content.image} alt={content.contentId}>
-              {sort === "ranking" ? (
-                <Component index={index} />
-              ) : (
-                <IconContainer>
-                  {Component && <Component index={index} />}
-                </IconContainer>
-              )}
-            </Img>
+            {/* 상세 페이지 구현 후 아래 주석 해제 팔요 */}
+            {/* <Link to="/contents/{content.contentId}/details"> */} 
+              <Img backgroundImage={content.image} alt={content.contentId}>
+                {sort === "ranking" ? (
+                  <Component index={index} />
+                ) : (
+                  <IconContainer>
+                    {Component && <Component index={index} />}
+                  </IconContainer>
+                )}
+              </Img>
+            {/* </Link> */}
           </ImageContainer>
         ))}
       </Carousel>
