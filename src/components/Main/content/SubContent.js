@@ -32,12 +32,16 @@ const SubContent = () => {
       ) : (
         <Section>
           <TopicTitle>최근 본 작품</TopicTitle>
-          <ContentSection contentData={novel} arrowCheck={false}/>
+          <ContentSection contentData={novel} arrowCheck={false} />
           <TopicTitle>실시간 랭킹</TopicTitle>
-          <ContentSection contentData={novel} sort={"ranking"} arrowCheck={true}/>
+          <ContentSection
+            contentData={novel}
+            sort={"ranking"}
+            arrowCheck={true}
+          />
           <NovelFreeContent />
           <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-          <ContentSection contentData={novel} arrowCheck={false}/>
+          <ContentSection contentData={novel} arrowCheck={false} />
         </Section>
       )}
     </Div>
@@ -49,7 +53,10 @@ export default SubContent;
 const Div = styled.div``;
 
 const TopicTitle = styled.p`
-  padding: 0 114.83px 10px 16px;
+  margin-left: 3.44%;
+  margin-right: 31.63%;
+  margin-top: 0%;
+  margin-bottom: 3.73%;
 
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
