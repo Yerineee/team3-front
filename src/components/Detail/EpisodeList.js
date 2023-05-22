@@ -8,7 +8,7 @@ import EpisodeItem from "./EpisodeItem";
 
 const EpisodeList = ({ imageUrl, episodes }) => {
   return (
-    <EpisodeWrapper>
+    <EpisodeListWrapper>
       {/* 상단의 버튼 */}
       <TopBtnSection>
         {/* 선택 구매 버튼 */}
@@ -38,13 +38,13 @@ const EpisodeList = ({ imageUrl, episodes }) => {
           />
         );
       })}
-    </EpisodeWrapper>
+    </EpisodeListWrapper>
   );
 };
 
 export default EpisodeList;
 
-const EpisodeWrapper = styled.div`
+const EpisodeListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
