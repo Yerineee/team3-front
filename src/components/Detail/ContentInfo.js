@@ -53,17 +53,20 @@ const ContentInfo = ({ details }) => {
 export default ContentInfo;
 
 const Div = styled.div`
-  position: relative;
-  top: -214px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   width: 100%;
 `;
 
+// 상단 섹션 (작품 제목 위의 섹션)
 const TopSection = styled.div`
   display: flex;
   justify-content: center;
 `;
 
+// 평점 및 댓글 버튼 섹션
 const BtnSection = styled.div`
   display: flex;
   justify-content: space-between;
@@ -113,7 +116,7 @@ const ContentTitle = styled.p`
   font-family: "Noto Sans KR Bold";
   font-size: 18px;
 
-  margin: 32px 0px 14px 30px;
+  margin: 32px 0px 14px 16px;
 `;
 
 // 작품 핵심 정보 (장르, 작가 등)
@@ -121,24 +124,28 @@ const ContentMainInfo = styled.p`
   font-family: "Noto Sans KR Regular";
   font-size: 13px;
 
-  margin: 0px 0px 4px 30px;
+  margin: 0px 0px 4px 16px;
 `;
 
+// 작품 설명 섹션
 const DescriptionSection = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
-// 작품 내용 설명
+// 작품 설명 내용
 const Description = styled.p`
   width: 273px;
   font-family: "Noto Sans KR Regular";
   font-size: 13px;
   color: #949494;
 
-  margin: 12px 0px 24px 30px;
+  margin: 12px 0px 24px 16px;
 `;
 
+// 작품 설명 및 공지 우측 화살표 버튼
 const OpenBtn = styled.img`
   width: 44px;
   height: 44px;
+  margin-left: 10px;
 `;
