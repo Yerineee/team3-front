@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
+// icons
+import moreview from "../assets/icon/Detail/moreview.png";
+
 // components
 import DetailNavBar from "../components/Detail/DetailNavBar";
 import ContentInfo from "../components/Detail/ContentInfo";
@@ -114,6 +117,12 @@ const DetailPage = () => {
         <ContentInfo details={details} />
 
         <EpisodeList imageUrl={details[0]?.imageUrl} episodes={episodes} />
+        <MoreEpisodeBtn>
+          <MoreEpisodeBtnText>
+            총 {details[0]?.totalEpisodes}화
+          </MoreEpisodeBtnText>
+          <MoreEpisodeBtnImg src={moreview} />
+        </MoreEpisodeBtn>
       </ContentWrapper>
       <FirstViewBtn>무료로 첫화보기</FirstViewBtn>
     </Div>
@@ -145,6 +154,33 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const MoreEpisodeBtn = styled.button`
+  position: relative;
+  top: -21.5px;
+
+  width: 358px;
+  height: 43px;
+
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 18px;
+`;
+
+const MoreEpisodeBtnText = styled.span`
+  height: 15px;
+
+  font-family: "Noto Sans KR Medium";
+  font-size: 14px;
+  text-align: center;
+`;
+
+const MoreEpisodeBtnImg = styled.img`
+  width: 5px;
+  height: 10px;
+
+  margin-left: 12px;
 `;
 
 const FirstViewBtn = styled.button`
