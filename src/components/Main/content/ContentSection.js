@@ -38,7 +38,7 @@ const ContentContainer = styled.div`
   position: relative
 
   padding-right: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const MoreIcon = styled.img`
@@ -46,7 +46,7 @@ const MoreIcon = styled.img`
   right: 0; /* 오른쪽 정렬 */
   margin-top: ${props =>
     props.topicTitle ? "5px" : "-24px"}; /* 상단 위치 조정 */
-  margin-right: 25px;
+  margin-right: 35px;
   width: 7.81px;
   height: 10.01px;
 `;

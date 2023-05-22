@@ -59,8 +59,16 @@ const MainContent = () => {
           </Section>
           <Section>
             <TopicTitle>지금 시리즈가 추천해요</TopicTitle>
-            <ContentSection topicTitle={"NOVEL"} contentData={novel} arrowCheck={false}/>
-            <ContentSection topicTitle={"COMIX"} contentData={comix} arrowCheck={false}/>
+            <ContentSection
+              topicTitle={"NOVEL"}
+              contentData={novel}
+              arrowCheck={false}
+            />
+            <ContentSection
+              topicTitle={"COMIX"}
+              contentData={comix}
+              arrowCheck={false}
+            />
           </Section>
         </>
       )}
@@ -73,7 +81,10 @@ export default MainContent;
 const Div = styled.div``;
 
 const TopicTitle = styled.p`
-  padding: 0 114.83px 10px 16px;
+  margin-left: 3.44%;
+  margin-right: 31.63%;
+  margin-top: 0%;
+  margin-bottom: 3.73%;
 
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
@@ -85,7 +96,7 @@ const TopicTitle = styled.p`
 `;
 
 const Section = styled.div`
-  margin-bottom: 52px;
+  margin-bottom: 45px;
 `;
 
 const LoadingText = styled.p`

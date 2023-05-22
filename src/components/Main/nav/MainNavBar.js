@@ -10,20 +10,16 @@ const MainNavBar = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate("/"); // 로고 클릭 시 "/main" 경로로 이동
+    navigate("/"); // 로고 클릭 시 "/" 경로로 이동
     window.location.reload(); // 새로고침
   };
 
   return (
     <Div>
-      <div>
-        <ProfileIcon src={profile} />
-        <Link to="/">
-          <MainLogo src={logo} onClick={handleLogoClick} />
-        </Link>
-        <CookieIcon src={cookie} />
-        <SearchIcon src={search} />
-      </div>
+      <ProfileIcon src={profile} />
+      <MainLogo src={logo} onClick={handleLogoClick} />
+      <CookieIcon src={cookie} />
+      <SearchIcon src={search} />
     </Div>
   );
 };
@@ -63,7 +59,7 @@ const CookieIcon = styled.img`
   width: 20px;
   height: 20px;
 
-  right: 55.76px;
+  right: 63px;
   top: 86.64px;
 `;
 
