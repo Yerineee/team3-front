@@ -39,6 +39,7 @@ const DetailPage = () => {
         episodeNumber: 1,
         title: "프롤로그_우리 방금 이혼했어요",
         date: "2018-05-02",
+        volumn: "0.2 MB",
         isFree: true,
       },
       {
@@ -46,6 +47,7 @@ const DetailPage = () => {
         episodeNumber: 2,
         title: "어서 오세요, 새싹 약국입니다",
         date: "2018-05-02",
+        volumn: "0.2 MB",
         isFree: true,
       },
       {
@@ -53,6 +55,7 @@ const DetailPage = () => {
         episodeNumber: 3,
         title: "망했다. 이 면접은",
         date: "2018-05-02",
+        volumn: "0.2 MB",
         isFree: true,
       },
     ]);
@@ -107,9 +110,11 @@ const DetailPage = () => {
       <CoverBackground />
       <DetailNavBar />
 
-      <ContentInfo details={details} />
+      <ContentWrapper>
+        <ContentInfo details={details} />
 
-      <EpisodeList imageUrl={details.imageUrl} episodes={episodes} />
+        <EpisodeList imageUrl={details[0]?.imageUrl} episodes={episodes} />
+      </ContentWrapper>
       <FirstViewBtn>무료로 첫화보기</FirstViewBtn>
     </Div>
   );
@@ -133,6 +138,15 @@ const CoverBackground = styled.div`
   height: 210px;
 `;
 
+const ContentWrapper = styled.div`
+  position: relative;
+  top: -214px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const FirstViewBtn = styled.button`
   position: fixed;
   left: 50%;
@@ -146,5 +160,7 @@ const FirstViewBtn = styled.button`
   color: #ffffff;
   font-family: "Noto Sans KR Medium";
   font-size: 16px;
+
   border-radius: 61px;
+  border: 0px;
 `;
