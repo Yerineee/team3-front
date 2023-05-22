@@ -8,6 +8,8 @@ import moreview from "../assets/icon/Detail/moreview.png";
 import DetailNavBar from "../components/Detail/DetailNavBar";
 import ContentInfo from "../components/Detail/ContentInfo";
 import EpisodeList from "../components/Detail/EpisodeList";
+import RecommendList from "../components/Detail/RecommendList";
+import Footer from "../components/Footer/Footer";
 
 // 커버 이미지 임의로 넣어두었습니다.
 const DetailPage = () => {
@@ -113,7 +115,7 @@ const DetailPage = () => {
       <CoverBackground />
       <DetailNavBar />
 
-      <ContentWrapper>
+      <MainWrapper>
         <ContentInfo details={details} />
 
         <EpisodeList imageUrl={details[0]?.imageUrl} episodes={episodes} />
@@ -123,8 +125,10 @@ const DetailPage = () => {
           </MoreEpisodeBtnText>
           <MoreEpisodeBtnImg src={moreview} />
         </MoreEpisodeBtn>
-      </ContentWrapper>
-      <FirstViewBtn>무료로 첫화보기</FirstViewBtn>
+        <FirstViewBtn>무료로 첫화보기</FirstViewBtn>
+      </MainWrapper>
+
+      <Footer />
     </Div>
   );
 };
@@ -147,7 +151,7 @@ const CoverBackground = styled.div`
   height: 210px;
 `;
 
-const ContentWrapper = styled.div`
+const MainWrapper = styled.div`
   position: relative;
   top: -214px;
 
@@ -185,9 +189,10 @@ const MoreEpisodeBtnImg = styled.img`
 
 const FirstViewBtn = styled.button`
   position: fixed;
+  z-index: 1;
   left: 50%;
   transform: translate(-50%, -50%);
-  bottom: 100px;
+  bottom: 27px;
 
   width: 280px;
   height: 46px;
