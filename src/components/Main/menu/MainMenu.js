@@ -43,8 +43,8 @@ const MainMenu = () => {
             <Menu
               to={path}
               isSelected={isSelected}
-              onClick={() => isClickable && handleItemClick(item)} // 클릭 가능한 경우에만 핸들러 호출
-              clickable={isClickable} // 클릭 가능한 경우에만 스타일 적용
+              onClick={() => isClickable && handleItemClick(item)}
+              clickable={isClickable.toString()} // boolean 값을 문자열로 변환하여 전달
             >
               <SectionTitle isSelected={isSelected}>{item}</SectionTitle>
             </Menu>
