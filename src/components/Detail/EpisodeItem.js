@@ -39,8 +39,10 @@ export default EpisodeItem;
 
 const ItemWrapper = styled.div`
   width: 100%;
+  height: 56px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 
   margin-bottom: 16px;
 `;
@@ -50,7 +52,7 @@ const EpisodeImg = styled.img`
   border-radius: 3px;
 
   width: 38px;
-  height: 56px;
+  height: 100%;
 `;
 
 // 에피소드 정보 (제목, 용량, 날짜)
@@ -60,6 +62,7 @@ const EpisodeInfo = styled.div`
   justify-content: space-around;
 
   width: 228px;
+  height: 100%;
 `;
 
 // 에피소드 제목
