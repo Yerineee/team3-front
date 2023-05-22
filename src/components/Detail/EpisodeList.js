@@ -53,6 +53,7 @@ const EpisodeWrapper = styled.div`
   border-radius: 18px;
 
   width: 359px;
+  padding-bottom: 21.5px;
 `;
 
 // 에피소드 리스트 상단 버튼 섹션 (선택 구매 버튼, 정렬 버튼)
