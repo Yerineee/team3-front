@@ -35,7 +35,7 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative
+  position: relative;
 
   padding-right: 15px;
   margin-bottom: 20px;
