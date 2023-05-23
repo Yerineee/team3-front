@@ -5,7 +5,7 @@ const HashtagList = ({ hashtags }) => {
     <ListWrapper>
       {hashtags &&
         hashtags.map(hashtag => {
-          return <Hashtag key={hashtag}>#{hashtag}</Hashtag>;
+          return <Hashtag key={hashtag.hashtagId}>#{hashtag.tag}</Hashtag>;
         })}
     </ListWrapper>
   );

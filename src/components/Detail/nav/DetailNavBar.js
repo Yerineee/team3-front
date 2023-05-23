@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 // icons
-import back from "../../assets/icon/Detail/back.png";
-import like from "../../assets/icon/Detail/like.png";
-import additional from "../../assets/icon/Detail/additional.png";
+import back from "../../../assets/icon/Detail/back.png";
+import like from "../../../assets/icon/Detail/like.png";
+import additional from "../../../assets/icon/Detail/additional.png";
 
 const DetailNavBar = () => {
   return (

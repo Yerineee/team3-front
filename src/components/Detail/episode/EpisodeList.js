@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // icons
-import moreview from "../../assets/icon/Detail/moreview.png";
+import moreview from "../../../assets/icon/Detail/moreview.png";
 
 // components
 import EpisodeItem from "./EpisodeItem";

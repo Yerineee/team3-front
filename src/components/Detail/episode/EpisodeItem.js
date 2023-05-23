@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 // icons
-import paiddownload from "../../assets/icon/Detail/paiddownload.png";
-import freedownload from "../../assets/icon/Detail/freedownload.png";
+import paiddownload from "../../../assets/icon/Detail/paiddownload.png";
+import freedownload from "../../../assets/icon/Detail/freedownload.png";
 
 const EpisodeItem = ({
   imageUrl,
