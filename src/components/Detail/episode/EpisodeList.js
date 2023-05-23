@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // icons
-import moreview from "../../assets/icon/Detail/moreview.png";
+import moreview from "../../../assets/icon/Detail/moreview.png";
 
 // components
 import EpisodeItem from "./EpisodeItem";
@@ -53,6 +53,7 @@ const EpisodeListWrapper = styled.div`
   border-radius: 18px;
 
   width: 359px;
+  margin-top: 24px;
   padding-bottom: 21.5px;
 `;
 
