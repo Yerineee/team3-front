@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // icons
 import back from "../../../assets/icon/Detail/back.png";
@@ -8,9 +9,11 @@ import additional from "../../../assets/icon/Detail/additional.png";
 const DetailNavBar = () => {
   return (
     <Div>
-      <BtnSection>
-        <BackBtn src={back} />
-      </BtnSection>
+      <Link to={`/main/novels`}>
+        <BtnSection>
+          <BackBtn src={back} />
+        </BtnSection>
+      </Link>
       <BtnSection>
         <LikeBtn src={like} />
         <AdditionalBtn src={additional} />

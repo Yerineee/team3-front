@@ -53,6 +53,7 @@ const EpisodeListWrapper = styled.div`
   border-radius: 18px;
 
   width: 359px;
+  margin-top: 24px;
   padding-bottom: 21.5px;
 `;
 

@@ -18,6 +18,7 @@ import Footer from "../components/Footer/Footer";
 
 const DetailPage = () => {
   const [details, setDetails] = useState([]); // 작품의 장르, 제목 등 세부 정보
+  const [hashtags, setHashtags] = useState([]); // 작품의 해시태그
   const [episodes, setEpisodes] = useState([]); // 작품의 에피소드 정보
   const [recommend, setRecommend] = useState([]); // 추천하는 다른 작품
   const { contentId } = useParams(); // 작품의 id
@@ -26,25 +27,13 @@ const DetailPage = () => {
     axios
       .get(`${API.GET_DETAILS}/${contentId}/details`)
       .then(response => {
-        console.log(response.data);
         // 작품 세부 정보
-        const detailsData = {
-          genre: response.data.genre,
-          title: response.data.title,
-          rating: response.data.rating,
-          commentCount: response.data.commentCount,
-          completed: response.data.completed,
-          author: response.data.author,
-          shortDescription: response.data.shortDescription,
-          longDescription: response.data.longDescription,
-          totalEpisodes: response.data.totalEpisodes,
-          imageUrl: response.data.imageUrl,
-          downloadCount: response.data.downloadCount,
-          hashtags: response.data.hashtags.hashtagList,
-          shortNotice: response.data.shortNotice,
-          longNotice: response.data.longNotice,
-        };
+        const detailsData = response.data.contentDetail;
         setDetails(detailsData);
+
+        // 해시태그
+        const hashtagsData = response.data.hashtags.hashtagList;
+        setHashtags(hashtagsData);
 
         // 작품의 에피소드 정보
         const episodesData = response.data.episodes.episodeList;
@@ -68,7 +57,7 @@ const DetailPage = () => {
       <DetailNavBar />
 
       <MainWrapper>
-        <ContentInfo details={details} />
+        <ContentInfo details={details} hashtags={hashtags} />
 
         <EpisodeList imageUrl={details.imageUrl} episodes={episodes} />
         <MoreEpisodeBtn>

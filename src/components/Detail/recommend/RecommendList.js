@@ -24,6 +24,7 @@ const RecommendList = ({ text, works }) => {
             return (
               <RecommendItem
                 key={item.title}
+                image={item.image}
                 genre={item.genre}
                 title={item.title}
                 downloadCount={item.downloadCount}

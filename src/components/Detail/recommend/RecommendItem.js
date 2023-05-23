@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const RecommentItem = ({ genre, title, downloadCount }) => {
+const RecommentItem = ({ image, genre, title, downloadCount }) => {
   return (
     <ItemWrapper>
-      <ItemImg />
+      <ItemImg src={image} />
       <ItemTitle>{title}</ItemTitle>
       <ItemInfo>
         {genre}·{downloadCount / 1000}만
@@ -22,11 +22,10 @@ const ItemWrapper = styled.div`
   height: 202px;
 `;
 
-const ItemImg = styled.div`
+const ItemImg = styled.img`
   width: 100%;
   height: 136px;
 
-  background-color: #d9d9d9;
   border-radius: 3px;
 `;
 
