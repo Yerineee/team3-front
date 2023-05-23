@@ -96,7 +96,7 @@ const TopicTitle = styled.p`
 `;
 
 const Section = styled.div`
-  margin-bottom: 45px;
+  margin-bottom: 52px;
 `;
 
 const LoadingText = styled.p`
