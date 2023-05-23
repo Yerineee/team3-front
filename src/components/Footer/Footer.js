@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import line from "../../assets/icon/line.png";
 
 const Footer = () => {
   return (
     <Div>
-      <Line></Line>
+      <Line src={line}></Line>
       <FooterText>ⓒ NAVER WEBTOON Limited</FooterText>
     </Div>
   );
@@ -19,14 +20,9 @@ const Div = styled.div`
   background: #ffffff;
 `;
 
-const Line = styled.div`
-  width: 358px;
-  height: 1.05px;
-  margin-left: 16px;
-  margin-top: 1.05px;
 
-  border: 1px solid #d0d0d0;
-  transform: rotate(-0.17deg);
+const Line = styled.img`
+  margin-left: 17px;
 `;
 
 const FooterText = styled.p`

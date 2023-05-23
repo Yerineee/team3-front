@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cookie from "../../../assets/icon/Main/cookie.png";
 import logo from "../../../assets/logo/logo.png";
 import profile from "../../../assets/icon/Main/profile.png";

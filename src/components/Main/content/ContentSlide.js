@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
@@ -47,7 +48,7 @@ const ContentSlide = ({ contents, sort }) => {
         showArrows={false}
         showThumbs={false}
         centerMode
-        centerSlidePercentage={100 / 3}
+        centerSlidePercentage={103 / 3}
       >
         {contents.map((content, index) => (
           <ImageContainer key={content.contentId}>
