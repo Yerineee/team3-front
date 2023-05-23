@@ -8,4 +8,5 @@ export const API = {
   GET_NOVELS_FREELIST_FREEPASS: `${BASE_URL}/novels/freeList?freeType=freepass`,
   GET_NOVELS_FREELIST_FREETODAY: `${BASE_URL}/novels/freeList?freeType=freetoday`,
   GET_NOVELS_FREELIST_TIMEDEAL: `${BASE_URL}/novels/freeList?freeType=timedeal`,
+  GET_DETAILS: `${BASE_URL}/contents`,
 };
