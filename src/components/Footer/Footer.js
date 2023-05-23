@@ -12,10 +12,9 @@ const Footer = () => {
 export default Footer;
 
 const Div = styled.div`
-  width: 100%;
+  width: 390px;
   height: 80px;
-  left: calc(50% - 390px / 2 + 0.5px);
-  top: 6144px;
+  margin-left: calc(50% - 390px / 2);
 
   background: #ffffff;
 `;
@@ -23,8 +22,10 @@ const Div = styled.div`
 const Line = styled.div`
   width: 358px;
   height: 1.05px;
-  background-color: #d0d0d0;
   margin-left: 16px;
+  margin-top: 1.05px;
+
+  border: 1px solid #d0d0d0;
   transform: rotate(-0.17deg);
 `;
 
