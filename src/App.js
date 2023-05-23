@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles/font/font.css";
+
 import MainPage from "./pages/MainPage";
 import DetailPage from "./pages/DetailPage";
 
