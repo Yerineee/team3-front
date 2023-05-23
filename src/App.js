@@ -1,5 +1,18 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles/font/font.css";
+import MainPage from "./pages/MainPage";
+import DetailPage from "./pages/DetailPage";
+
 function App() {
-  return <div>project setting</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<MainPage />} />
+        <Route path="/contents/:contentId/details" element={<DetailPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

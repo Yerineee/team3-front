@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Noto Sans KR Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./NotoSansKR-Regular.otf") format("woff2"),
+    url("./NotoSansKR-Regular.otf") format("woff"),
+    url("./NotoSansKR-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Noto Sans KR Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./NotoSansKR-Medium.otf") format("woff2"),
+    url("./NotoSansKR-Medium.otf") format("woff"),
+    url("./NotoSansKR-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Noto Sans KR Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./NotoSansKR-Bold.otf") format("woff2"),
+    url("./NotoSansKR-Bold.otf") format("woff"),
+    url("./NotoSansKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./AppleSDGothicNeoRegular.otf") format("woff2"),
+    url("./AppleSDGothicNeoRegular.otf") format("woff"),
+    url("./AppleSDGothicNeoRegular.otf") format("truetype");
+}
