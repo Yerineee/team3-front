@@ -52,7 +52,6 @@ const ContentSlide = ({ contents, sort }) => {
       >
         {contents.map((content, index) => (
           <ImageContainer key={content.contentId}>
-            {/* 상세 페이지 구현 후 아래 주석 해제 팔요 */}
             <Link to={`/contents/${content.contentId}/details`}>
               <Img backgroundImage={content.image} alt={content.contentId}>
                 {sort === "ranking" ? (
