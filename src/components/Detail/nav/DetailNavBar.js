@@ -9,7 +9,7 @@ import additional from "../../../assets/icon/Detail/additional.png";
 const DetailNavBar = () => {
   return (
     <Div>
-      <Link to={`/main/novels`}>
+      <Link to={`/`}>
         <BtnSection>
           <BackBtn src={back} />
         </BtnSection>
